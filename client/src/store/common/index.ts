@@ -8,5 +8,5 @@ const commonSlice = createSlice({
   reducers: {},
 });
 
-export const actions = commonSlice.actions;
+export const {} = commonSlice.actions;
 export default commonSlice.reducer;

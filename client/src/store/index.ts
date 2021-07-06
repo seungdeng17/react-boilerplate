@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 import commonReducer from './common';
@@ -8,7 +8,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: { common: commonReducer },
-  middleware: [sagaMiddleware],
+  middleware: [...getDefaultMiddleware({ thunk: false }), sagaMiddleware],
   devTools: process.env.NODE_ENV === 'development',
 });
 
