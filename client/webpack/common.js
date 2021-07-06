@@ -40,6 +40,7 @@ module.exports = {
       '@constant': path.resolve(__dirname, '../', 'src/constant/'),
       '@hook': path.resolve(__dirname, '../', 'src/hook/'),
       '@store': path.resolve(__dirname, '../', 'src/store/'),
+      '@style': path.resolve(__dirname, '../', 'src/style/'),
       '@util': path.resolve(__dirname, '../', 'src/util/'),
     },
   },
