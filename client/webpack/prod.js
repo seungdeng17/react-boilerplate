@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge');
 const common = require('./common.js');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -10,11 +11,12 @@ module.exports = merge(common, {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, '../dist'),
-    libraryTarget: 'umd',
+    publicPath: '/',
   },
 
-  externals: {
-    react: 'commonjs react',
-    'react-dom': 'commonjs react-dom',
-  },
+  plugins: [
+    new Dotenv({
+      path: path.resolve(__dirname, '../.env.production'),
+    }),
+  ],
 });

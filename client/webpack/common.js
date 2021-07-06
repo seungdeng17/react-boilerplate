@@ -1,4 +1,6 @@
+const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   module: {
@@ -37,4 +39,12 @@ module.exports = {
       '@': path.resolve(__dirname, '../src/'),
     },
   },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './public/index.html',
+    }),
+  ],
 };

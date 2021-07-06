@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve",
-    "build": "webpack"
+    "build": "rm -rf ./dist && webpack"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,7 @@
     "@types/react-dom": "^17.0.8",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
+    "dotenv-webpack": "^7.0.3",
     "html-webpack-plugin": "^5.3.2",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
