@@ -57,7 +57,6 @@ const fetchSlice = createSlice({
       }
       state.fetchInfo.isSlowMap[actionType][fetchKey] = isSlow;
     },
-    fetchSampleIp: () => {},
   },
 });
 
