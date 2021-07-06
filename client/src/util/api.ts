@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API_HOST, ResultCode } from '@constant/common';
 
-export function callApi({ method = 'get', url, params, data }: { [key: string]: any }) {
+export function request({ method = 'get', url, params, data }: { [key: string]: any }) {
   return axios({
     url,
     method,

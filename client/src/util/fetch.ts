@@ -1,7 +1,7 @@
 import { put, delay, fork, cancel, select, call } from 'redux-saga/effects';
 import * as lruCache from 'lru-cache';
 import { FetchStatus, FETCH_PAGE, FETCH_KEY } from '@constant/common';
-import { callApi } from '@util/api';
+import { request } from '@util/api';
 import { actions } from '@store/common';
 
 function makeCheckSlowSaga(actionType: any, fetchKey: any) {
@@ -33,25 +33,25 @@ export function makeFetchSaga({
 }: {
   [key: string]: any;
 }) {
-  return function* (action: any) {
+  return function* (action: any): Generator<any> {
     const { type: actionType } = action;
     const fetchPage = action[FETCH_PAGE];
     const fetchKey = getFetchKey(action);
     const nextPage = yield select((state) => state.common.fetchInfo.nextPageMap[actionType]?.[fetchKey] || 0);
     const page = fetchPage !== undefined ? fetchPage : nextPage;
     const iterStack = [];
-    let iter = fetchSaga(action, page);
+    let iter: any = fetchSaga(action, page);
     let res;
-    let checkSlowTask;
+    let checkSlowTask: any;
     let params;
     while (true) {
-      const { value, done } = iter.next(res);
+      const { value, done }: any = iter.next(res);
       if (getIsCallEffect(value) && getIsGeneratorFunction(value.payload.fn)) {
         iterStack.push(iter);
         iter = value.payload.fn(...value.payload.args);
         continue;
       }
-      if (getIsCallEffect(value) && value.payload.fn === callApi) {
+      if (getIsCallEffect(value) && value.payload.fn === request) {
         yield put(
           actions.setFetchStatus({
             actionType,
@@ -61,7 +61,7 @@ export function makeFetchSaga({
         );
         const apiParam = value.payload.args[0];
         const cacheKey = getApiCacheKey(actionType, apiParam);
-        let apiResult = canCache && apiCache.has(cacheKey) ? apiCache.get(cacheKey) : undefined;
+        let apiResult: any = canCache && apiCache.has(cacheKey) ? apiCache.get(cacheKey) : undefined;
         const isFromCache = !!apiResult;
         if (!isFromCache) {
           if (!apiResult) {
