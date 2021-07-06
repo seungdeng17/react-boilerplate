@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client": "cd client && npm run start",
+    "server": "cd server && npm run start",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "sync": "rm -rf ./dist/* && mv ./client/build/* ./dist",
+    "prod": "npm-run-all build sync",
+    "proxy": "concurrently --kill-others-on-fail \"node proxy-server.js\" \"npm run server\""
   },
   "repository": {
     "type": "git",
@@ -16,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/seungdeng17/react-boilerplate/issues"
   },
-  "homepage": "https://github.com/seungdeng17/react-boilerplate#readme"
+  "homepage": "https://github.com/seungdeng17/react-boilerplate#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^2.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "npm-run-all": "^4.1.5"
+  }
 }
