@@ -8,7 +8,7 @@
     "server": "cd server && npm run start",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build": "cd client && npm run build",
-    "sync": "rm -rf ./dist/* && mv ./client/build/* ./dist",
+    "sync": "rm -rf ./dist && mkdir dist && mv ./client/build/* ./dist",
     "prod": "npm-run-all build sync",
     "proxy": "concurrently --kill-others-on-fail \"node proxy-server.js\" \"npm run server\""
   },
