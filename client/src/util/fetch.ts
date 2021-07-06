@@ -134,7 +134,7 @@ function getIsGeneratorFunction(obj: any) {
   return 'function' === typeof proto.next && 'function' === typeof proto.throw;
 }
 
-export function deleteApiCache(actionType: any) {
+export function deleteApiCache(actionType?: any) {
   let keys = apiCache.keys();
   if (actionType) {
     keys = keys.filter((key: any) => key.includes(actionType));
