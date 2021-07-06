@@ -5,8 +5,16 @@ const initialState = {};
 const commonSlice = createSlice({
   name: 'common',
   initialState,
-  reducers: {},
+  reducers: {
+    setValue: (state, action) => {
+      const { key, value } = action.payload;
+      return {
+        ...state,
+        [key]: value,
+      };
+    },
+  },
 });
 
-export const {} = commonSlice.actions;
+export const { setValue } = commonSlice.actions;
 export default commonSlice.reducer;
