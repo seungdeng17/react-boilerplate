@@ -36,7 +36,11 @@ module.exports = {
     modules: ['node_modules'],
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
-      '@': path.resolve(__dirname, '../src/'),
+      '@': path.resolve(__dirname, '../', 'src/'),
+      '@constant': path.resolve(__dirname, '../', 'src/constant/'),
+      '@hook': path.resolve(__dirname, '../', 'src/hook/'),
+      '@store': path.resolve(__dirname, '../', 'src/store/'),
+      '@util': path.resolve(__dirname, '../', 'src/util/'),
     },
   },
 

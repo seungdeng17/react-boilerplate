@@ -9,8 +9,16 @@
     "strict": true,
     "allowJs": true,
     "noImplicitAny": true,
-    "declaration": true
-    // "emitDeclarationOnly": true
+    "declaration": true,
+    // "emitDeclarationOnly": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@constant/*": ["src/constant/*"],
+      "@hook/*": ["src/hook/*"],
+      "@store/*": ["src/store/*"],
+      "@util/*": ["src/util/*"]
+    }
   },
   // "include": ["./src/*"],
   "exclude": ["node_modules", "**/*.spec.ts", "./dist/**/*"]
