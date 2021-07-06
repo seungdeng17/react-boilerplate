@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { FetchStatus } from '@constant/common';
+import { FetchStatus } from '@constant/fetch';
 
 const initialState = {
   fetchInfo: {
@@ -11,8 +11,8 @@ const initialState = {
   },
 };
 
-const commonSlice = createSlice({
-  name: 'common',
+const fetchSlice = createSlice({
+  name: 'fetch',
   initialState,
   reducers: {
     setValue: (state: any, action) => {
@@ -61,5 +61,5 @@ const commonSlice = createSlice({
   },
 });
 
-export const { actions, reducer } = commonSlice;
+export const { actions, reducer } = fetchSlice;
 export default reducer;

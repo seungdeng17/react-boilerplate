@@ -2,10 +2,10 @@ import { combineReducers } from 'redux';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
-import commonReducer from './common';
-import commonSaga from './common/saga';
+import fetchReducer from '@store/fetch';
+import fetchSaga from '@store/fetch/saga';
 
-const rootReducer = combineReducers({ common: commonReducer });
+const rootReducer = combineReducers({ fetch: fetchReducer });
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
@@ -15,7 +15,7 @@ const store = configureStore({
 });
 
 function* rootSaga() {
-  yield all([commonSaga()]);
+  yield all([fetchSaga()]);
 }
 sagaMiddleware.run(rootSaga);
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_HOST, ResultCode } from '@constant/common';
+import { API_HOST, ResultCode } from '@constant/fetch';
 
 export function request({ method = 'get', url, params, data }: { [key: string]: any }) {
   return axios({

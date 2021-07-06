@@ -1,8 +1,8 @@
 import { put, delay, fork, cancel, select, call } from 'redux-saga/effects';
 import * as lruCache from 'lru-cache';
-import { FetchStatus, FETCH_PAGE, FETCH_KEY } from '@constant/common';
+import { FetchStatus, FETCH_PAGE, FETCH_KEY } from '@constant/fetch';
 import { request } from '@util/api';
-import { actions } from '@store/common';
+import { actions } from '@store/fetch';
 
 function makeCheckSlowSaga(actionType: any, fetchKey: any) {
   return function* () {
@@ -37,7 +37,7 @@ export function makeFetchSaga({
     const { type: actionType } = action;
     const fetchPage = action[FETCH_PAGE];
     const fetchKey = getFetchKey(action);
-    const nextPage = yield select((state) => state.common.fetchInfo.nextPageMap[actionType]?.[fetchKey] || 0);
+    const nextPage = yield select((state) => state.fetch.fetchInfo.nextPageMap[actionType]?.[fetchKey] || 0);
     const page = fetchPage !== undefined ? fetchPage : nextPage;
     const iterStack = [];
     let iter: any = fetchSaga(action, page);
