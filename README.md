@@ -1,6 +1,6 @@
 # react-boilerplate
 
-### v1.0.0
+### v1.1.0
 
 ### client
 - react
@@ -9,6 +9,7 @@
 - redux-saga
 - styled-components
 - typescript
+- storybook
 
 ### server
 - express
