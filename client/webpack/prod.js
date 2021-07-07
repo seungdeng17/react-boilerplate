@@ -9,6 +9,7 @@ module.exports = merge(common, {
   entry: ['@babel/polyfill', './src/index.tsx'],
 
   output: {
+    filename: './static/js/[chunkhash].js',
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
   },
