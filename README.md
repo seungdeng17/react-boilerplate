@@ -29,7 +29,7 @@ $ yarn dev
 $ yarn prod
 ```
 
-- proxy 서버 실행 (빌드 파일 테스트용)
+- proxy 서버 (빌드 파일 테스트용)
 ```
 $ yarn proxy
 ```
