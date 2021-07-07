@@ -14,6 +14,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
+      "@asset/*": ["src/asset/*"],
       "@constant/*": ["src/constant/*"],
       "@hook/*": ["src/hook/*"],
       "@store/*": ["src/store/*"],

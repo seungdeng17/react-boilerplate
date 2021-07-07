@@ -8,6 +8,7 @@ module.exports = {
   webpackFinal: async (config, { configType }) => {
     config.resolve.alias = {
       '@': path.resolve(__dirname, '../', 'src/'),
+      '@asset': path.resolve(__dirname, '../', 'src/asset/'),
       '@constant': path.resolve(__dirname, '../', 'src/constant/'),
       '@hook': path.resolve(__dirname, '../', 'src/hook/'),
       '@store': path.resolve(__dirname, '../', 'src/store/'),

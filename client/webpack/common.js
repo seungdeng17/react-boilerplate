@@ -29,6 +29,14 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
         exclude: /node_modules/,
       },
+      {
+        test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader',
+        options: {
+          name: '[hash].[ext]',
+          limit: 10000,
+        },
+      },
     ],
   },
 
@@ -37,6 +45,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
       '@': path.resolve(__dirname, '../', 'src/'),
+      '@asset': path.resolve(__dirname, '../', 'src/asset/'),
       '@constant': path.resolve(__dirname, '../', 'src/constant/'),
       '@hook': path.resolve(__dirname, '../', 'src/hook/'),
       '@store': path.resolve(__dirname, '../', 'src/store/'),
