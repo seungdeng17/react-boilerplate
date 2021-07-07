@@ -13,7 +13,8 @@
     "proxy": "concurrently --kill-others-on-fail \"node proxy-server.js\" \"npm run server\"",
     "sb": "cd client && npm run sb",
     "sb-build": "cd client && npm run sb-build",
-    "clean": "rm -rf ./dist && cd client && npm run clean"
+    "clean": "rm -rf ./dist && cd client && npm run clean",
+    "initialize": "node ./initialize.js"
   },
   "repository": {
     "type": "git",
