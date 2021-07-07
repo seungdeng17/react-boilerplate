@@ -4,6 +4,11 @@
 
 ## Install
 
+- yarn 설치 (미설치 시)
+```
+$ npm i yarn --global
+```
+
 - boilerplate 초기화 (의존성 모듈 설치, 포트 설정, 환경변수 생성 등)
 ```
 $ yarn initialize
