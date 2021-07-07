@@ -1,6 +1,6 @@
 # react-boilerplate
 
-### v1.1.0
+### v1.1.5
 
 ### client
 - react
