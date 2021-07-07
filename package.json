@@ -10,7 +10,9 @@
     "build": "cd client && npm run build",
     "sync": "rm -rf ./dist && mkdir dist && mv ./client/dist ./",
     "prod": "npm-run-all build sync",
-    "proxy": "concurrently --kill-others-on-fail \"node proxy-server.js\" \"npm run server\""
+    "proxy": "concurrently --kill-others-on-fail \"node proxy-server.js\" \"npm run server\"",
+    "sb": "cd client && npm run sb",
+    "sb-build": "cd client && npm run sb-build"
   },
   "repository": {
     "type": "git",

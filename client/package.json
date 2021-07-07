@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve",
-    "build": "rm -rf ./dist && webpack"
+    "build": "rm -rf ./dist && webpack",
+    "sb": "start-storybook -p 6006",
+    "sb-build": "build-storybook"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +31,10 @@
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
+    "@storybook/addon-actions": "^6.3.2",
+    "@storybook/addon-essentials": "^6.3.2",
+    "@storybook/addon-links": "^6.3.2",
+    "@storybook/react": "^6.3.2",
     "@types/lru-cache": "^5.1.0",
     "@types/react": "^17.0.13",
     "@types/react-dom": "^17.0.8",
