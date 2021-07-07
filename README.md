@@ -34,6 +34,11 @@ $ yarn prod
 $ yarn proxy
 ```
 
+- storybook
+```
+$ yarn sb
+```
+
 <br />
 
 ## Packages
