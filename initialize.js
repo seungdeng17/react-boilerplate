@@ -16,11 +16,8 @@ const client_cwd = {
 };
 
 (function () {
-  const { stdout } = shell.exec('yarn -v', root_cwd);
-
-  shell.exec('yarn', root_cwd);
-  shell.exec('yarn', server_cwd);
-  shell.exec('yarn', client_cwd);
+  shell.exec('npm install', server_cwd);
+  shell.exec('npm install', client_cwd);
 
   shell.exec('touch .env', server_cwd);
   shell.exec('touch .env.development', client_cwd);
@@ -49,5 +46,5 @@ const client_cwd = {
     fs.writeFileSync('./server/app.js', updated_app, 'utf8');
   }
 
-  shell.exec('yarn dev', root_cwd);
+  shell.exec('npm run dev', root_cwd);
 })();
