@@ -17,7 +17,8 @@ const CLIENT_CWD = {
 
 (function () {
   const { stdout } = shell.exec('yarn -v', ROOT_CWD);
-  if (stdout.length > 20) return console.log('yarn: command not found');
+  if (stdout.length > 20) return console.log('❌ yarn: command not found');
+  if (CLIENT_PORT === SERVER_PORT) return console.log('❌ Check the port number.');
 
   shell.exec('yarn', SERVER_CWD);
   shell.exec('yarn', CLIENT_CWD);
