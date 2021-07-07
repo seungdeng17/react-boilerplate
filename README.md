@@ -2,15 +2,9 @@
 
 ### v1.1.6
 
-## Setting
+## Install
 
-1. root package 설치
-```
-$ yarn
-```
-
-2. boilerplate 초기화
-    - 1회 실행 (포트 설정, 환경변수 생성 등)
+- boilerplate 초기화 (의존성 모듈 설치, 포트 설정, 환경변수 생성 등)
 ```
 $ yarn initialize
 ```
