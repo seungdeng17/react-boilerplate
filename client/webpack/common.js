@@ -34,7 +34,7 @@ module.exports = {
         test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'url-loader',
         options: {
-          name: 'static/[hash].[ext]',
+          name: './static/[hash].[ext]',
           limit: 10000,
         },
       },
@@ -58,9 +58,9 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
+      filename: './index.html',
       template: './public/index.html',
     }),
-    new MiniCssExtractPlugin({ filename: 'static/css/[chunkhash].css' }),
+    new MiniCssExtractPlugin({ filename: './static/css/[chunkhash].css' }),
   ],
 };
