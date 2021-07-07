@@ -42,7 +42,7 @@ const CLIENT_CWD = {
     const proxyServer = fs.readFileSync('./proxy-server.js', 'utf8');
     const updatedProxyServer = proxyServer
       .replace('http://localhost:3001', `http://localhost:${SERVER_PORT}`)
-      .replace('app.listen(3000)', `app.listen(${CLIENT_PORT})`);
+      .replace('port = 3000', `port = ${CLIENT_PORT}`);
     fs.writeFileSync('./proxy-server.js', updatedProxyServer, 'utf8');
   }
   {
