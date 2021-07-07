@@ -14,5 +14,5 @@ app.get('/*', (_, res) => {
 });
 
 app.listen(port, function () {
-  console.log('\x1b[36m%s\x1b[0m', `Proxy server has started on port ${port} -> http://localhost:${port}`);
+  console.log('\x1b[36m', '\x1b[1m', `✅ Proxy server has started on port ${port} -> http://localhost:${port}`);
 });
