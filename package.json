@@ -14,7 +14,7 @@
     "sb": "cd client && yarn sb",
     "sb-build": "cd client && yarn sb-build",
     "clean": "rm -rf ./dist && cd client && yarn clean",
-    "initialize": "node ./.initialize.js"
+    "initialize": "yarn && node ./.initialize.js"
   },
   "repository": {
     "type": "git",
