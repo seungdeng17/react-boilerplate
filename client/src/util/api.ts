@@ -9,14 +9,19 @@ export function request({ method = 'get', url, params, data }: { [key: string]: 
     params,
     data,
     withCredentials: true,
-  }).then((response) => {
-    const { resultCode } = response.data;
-    if (resultCode < 0) {
-      console.warn('http error!');
-    }
-    return {
-      isSuccess: resultCode === RESULT_CODE.SUCCESS,
-      resultCode,
-    };
-  });
+  })
+    .then((response) => {
+      const { resultCode, data } = response.data;
+      if (resultCode < 0) {
+        throw new Error('http error!');
+      }
+      return {
+        isSuccess: resultCode === RESULT_CODE.SUCCESS,
+        resultCode,
+        data,
+      };
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
