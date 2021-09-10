@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_HOST, ResultCode } from '@constant/fetch';
+import { API_HOST, RESULT_CODE } from '@constant/fetch';
 
 export function request({ method = 'get', url, params, data }: { [key: string]: any }) {
   return axios({
@@ -15,7 +15,7 @@ export function request({ method = 'get', url, params, data }: { [key: string]: 
       console.warn('http error!');
     }
     return {
-      isSuccess: resultCode === ResultCode.Success,
+      isSuccess: resultCode === RESULT_CODE.SUCCESS,
       resultCode,
     };
   });
