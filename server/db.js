@@ -5,4 +5,4 @@ const db = low(adapter);
 
 db.defaults({}).write();
 
-exports.default = db;
+module.exports = { db };
