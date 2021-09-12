@@ -1,6 +1,6 @@
 # react-boilerplate
 
-### v1.1.7
+### v2.0.0
 
 ## Install
 
@@ -44,9 +44,8 @@ $ yarn sb
 
 ### client
 - react
-- redux
-- redux-toolkit
-- redux-saga
+- recoil
+- react-query
 - styled-components
 - typescript
 - storybook

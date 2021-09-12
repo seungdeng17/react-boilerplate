@@ -1,7 +1,13 @@
 import axios from 'axios';
-import { API_HOST, ResultCode } from '@constant/fetch';
+import { API_HOST, RESULT_CODE } from '@constant/fetch';
 
-export function request({ method = 'get', url, params, data }: { [key: string]: any }) {
+type RequestResult = {
+  isSuccess: boolean;
+  resultCode: number;
+  data: any;
+};
+
+export function request({ method = 'get', url, params, data }: { [key: string]: any }): Promise<RequestResult> {
   return axios({
     method,
     url,
@@ -10,13 +16,14 @@ export function request({ method = 'get', url, params, data }: { [key: string]: 
     data,
     withCredentials: true,
   }).then((response) => {
-    const { resultCode } = response.data;
+    const { resultCode, data } = response.data;
     if (resultCode < 0) {
-      console.warn('http error!');
+      console.error('http error!');
     }
     return {
-      isSuccess: resultCode === ResultCode.Success,
+      isSuccess: resultCode === RESULT_CODE.SUCCESS,
       resultCode,
+      data,
     };
   });
 }
