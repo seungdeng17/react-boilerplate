@@ -1,6 +1,6 @@
 # react-boilerplate
 
-### v2.0.0
+### v2.1.0
 
 ## Install
 
