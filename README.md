@@ -45,7 +45,6 @@ $ yarn sb
 ### client
 - react
 - recoil
-- react-query
 - styled-components
 - typescript
 - storybook
