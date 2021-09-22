@@ -9,7 +9,7 @@ module.exports = {
     config.resolve.alias = {
       '@': path.resolve(__dirname, '../', 'src/'),
       '@asset': path.resolve(__dirname, '../', 'src/asset/'),
-      '@component': path.resolve(__dirname, '../', 'src/component/'),
+      '@components': path.resolve(__dirname, '../', 'src/components/'),
       '@constant': path.resolve(__dirname, '../', 'src/constant/'),
       '@hook': path.resolve(__dirname, '../', 'src/hook/'),
       '@store': path.resolve(__dirname, '../', 'src/store/'),
