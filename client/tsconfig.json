@@ -18,6 +18,7 @@
       "@components/*": ["src/components/*"],
       "@constant/*": ["src/constant/*"],
       "@hook/*": ["src/hook/*"],
+      "@page/*": ["src/page/*"],
       "@store/*": ["src/store/*"],
       "@style/*": ["src/style/*"],
       "@util/*": ["src/util/*"]
