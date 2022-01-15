@@ -14,14 +14,14 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@asset/*": ["src/asset/*"],
+      "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
-      "@constant/*": ["src/constant/*"],
-      "@hook/*": ["src/hook/*"],
-      "@page/*": ["src/page/*"],
-      "@store/*": ["src/store/*"],
-      "@style/*": ["src/style/*"],
-      "@util/*": ["src/util/*"]
+      "@constants/*": ["src/constants/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@pages/*": ["src/pages/*"],
+      "@state/*": ["src/state/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"]
     }
   },
   // "include": ["./src/*"],
