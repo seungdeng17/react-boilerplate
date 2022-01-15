@@ -11,7 +11,6 @@ module.exports = merge(common, {
     port: 3000,
     open: true,
     historyApiFallback: true,
-    publicPath: '',
     // proxy: {
     //   '/api': {
     //     target: 'http://localhost:3001/',
