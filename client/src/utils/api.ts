@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_HOST, RESULT_CODE } from '@constant/fetch';
+import { API_HOST, RESULT_CODE } from '@constants/fetch';
 
 type RequestResult = {
   isSuccess: boolean;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import sample from '@asset/sample.png';
+import sample from '@assets/sample.png';
 
 export default function Sample() {
   return (
