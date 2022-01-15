@@ -9,9 +9,9 @@ module.exports = merge(common, {
   devServer: {
     host: 'localhost',
     port: 3000,
-    publicPath: '/',
     open: true,
     historyApiFallback: true,
+    publicPath: '',
     // proxy: {
     //   '/api': {
     //     target: 'http://localhost:3001/',

@@ -9,7 +9,7 @@ module.exports = {
   output: {
     filename: './static/js/[chunkhash].js',
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/',
+    publicPath: '',
   },
 
   module: {
@@ -43,10 +43,6 @@ module.exports = {
           name: './static/[hash].[ext]',
           limit: 10000,
         },
-      },
-      {
-        test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: ['file-loader?name=/static/[name].[ext]'],
       },
     ],
   },
