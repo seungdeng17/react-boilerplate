@@ -6,12 +6,19 @@ const Dotenv = require('dotenv-webpack');
 module.exports = merge(common, {
   mode: 'development',
 
-  entry: ['@babel/polyfill', './src/index.tsx'],
-
   devServer: {
+    host: 'localhost',
     port: 3000,
     publicPath: '/',
     open: true,
+    historyApiFallback: true,
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://localhost:3001/',
+    //     changeOrigin: true,
+    //     secure: false,
+    //   },
+    // },
   },
 
   plugins: [
